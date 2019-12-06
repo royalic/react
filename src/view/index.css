@@ -1,0 +1,128 @@
+.index {
+  text-align: center;
+}
+.find{
+  width:100px;
+  height:20px;
+}
+.left{
+  width:10%;
+}
+.top{
+  background: #96b97d;
+  text-align:center;
+}
+.col{
+  margin-right:1%;
+  float:left;
+}
+.col2{
+  margin-right:1%;
+  float:right;
+}
+.fff{
+  text-align:left;
+  color:#fff;
+  margin-left:100px;
+}
+.hiso{
+  width:6%;
+}
+.game3{
+  width:30%;
+}
+.game2{
+  width:20%;
+}
+.col3{
+  margin-right:1%;
+  float:right;
+}
+.littlenum{
+width:5%;
+}
+.history{
+  width:120px;
+  height:28px;}
+.starnum{
+   width:60px;
+   height:25px;
+}
+.selectnum{
+   width:300px;
+   height:56px;
+}
+.superstyle{
+   width:0px;
+   height:0px;
+   visibility: hidden;
+}
+.red{
+  text-align:right;
+  color:#c00;
+  margin-left:100px;
+}
+.money{
+  text-align:right;
+  color:#c00;
+  margin-left:10px;
+}
+.right{
+ width: 20%;
+}
+.backred{
+background-color:red;
+color:#fff;
+}
+.backgreen{
+background-color:green;
+color:#fff;
+}
+.backblue{
+background-color:blue;
+color:#fff;
+}
+.numhistoryfind{
+width:40;
+}
+.center {
+  width:50%;
+}
+.user {
+  width:90%;
+}
+.num {
+  text-align: center;
+  padding: 6px 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.box {
+width: 50%
+}
+.onclick {
+  text-align: center;
+}
+.aside {
+  width:24%
+}
+.flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+.button{
+ text-align:center;
+ margin-left:100px;
+ background-color:#fff;
+ color:#90b575;
+}
+.paytimes{
+  width:126px;
+  height:70px;}
+.test {
+    color: #444;
+    color: #617f10;
+    background-color:transparent;
+
+}
