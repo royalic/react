@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 var schedule=require('node-schedule');
-function resulttwo(){
+function resultfour(){
 
 var connection = mysql.createPool({
         host: 'localhost',
@@ -58,41 +58,59 @@ var results = () => new Promise(function(resolve,reject){
        var p6=value2[0].sixthnum;
        var p7=value2[0].supernum;
        var arr2=[p,p1,p2,p3,p4,p5,p6];
-       console.log(arr);
-       console.log(value2[0].link);
        if(arr[1]==arr2[0]){console.log('yes')}else{console.log('no')}
        var q;
        var t=0; 
+       var q1=1;
        if(arr[1]==arr2[0]){
             for(q=0; q<arr.length;q++){
               for(i=0; i<arr2.length;i++){
                  if(+arr[q+2]===+arr2[i]){
-                    t=t+1;}
-               }
+                    t=(+t+1);
+                    q1=t;
+                    };
+                 
+               }}
+            for(q=0; q<arr.length;q++){
+                 if(+arr[q+2]===+p7){
+                    t=t+1;
+                    q1=t*10;
+                    };
+                        
             }       
        }else{console.log('1')};
-
+      console.log(q1);
+      console.log(t);
       var z='not time';
       var z1=value[o].twostarmoney;
       var z2=value[o].threestarmoney;
       var z3=value[o].fourstarmoney;
-            if(t==0){
+            if(q1==0){
           z=0;}
-      if(t==1){
+      if(q1==1){
           z=0;}
-      if(t==2){
-          z=z1*74.09*1;
-          console.log(z1);}
-      if(t==3){
-          z=z1*74.09*3+z2*890*1;console.log(z1);}
-      if(t==4){
-          z=z1*74.09*6+z2*890*4+z3*13500*1;console.log(z1);}
-      if(t==5){
-          z=z1*74.09*10+z2*890*10+z3*13500*5;console.log(z1);}
-      if(t==6){
-          z=z1*74.09*15+z2*890*20+z3*13500*15;console.log(z1);}
-      console.log(t);
-      console.log(z);
+      if(q1==2){
+          z=z1*36*1;
+          console.log(z);}
+      if(q1==20){
+          z=z1*58*1;
+          console.log(z);}
+      if(q1==3){
+          z=z1*36*3;console.log(z);}
+      if(q1==30){
+          z=z1*58*3;console.log(z);}
+      if(q1==4){
+          z=z1*36*6;console.log(z);}
+      if(q1==40){
+          z=z1*58*6;console.log(z);}
+      if(q1==5){
+          z=z1*36*10;console.log(z);}
+      if(q1==5){
+          z=z1*58*10;console.log(z);}
+      if(q1==6){
+          z=z1*36*15;console.log(z);}
+      if(q1==6){
+          z=z1*58*15;console.log(z);}
       connection.query(
         "update payinfo set getcount=?,getmoney=? where id=? and time=?",[t,z,value[o].id,value2[0].link],
         function select(err, results) {
@@ -108,5 +126,6 @@ var results = () => new Promise(function(resolve,reject){
 }
 })
 
-});}
-exports.resulttwo=resulttwo;
+});
+}
+exports.resultfour=resultfour;

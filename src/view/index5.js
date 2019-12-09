@@ -3,12 +3,13 @@ import { Select } from 'antd';
 import axios from 'axios';
 import './index.css';
 const {Option}=Select;
-class App2 extends Component {
+class App5 extends Component {
     constructor(props){
        super(props);
        this.add=this.add.bind(this);
        this.add1=this.add1.bind(this);
        this.add2=this.add2.bind(this);
+       this.team=this.team.bind(this);
        this.delete=this.delete.bind(this);
        this.money=this.money.bind(this);
        this.nameChange=this.nameChange.bind(this);
@@ -55,7 +56,22 @@ add(e){                                                                         
         }
   }                                        
   this.setState({lists:lists})
-  var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+  var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -63,31 +79,12 @@ add(e){                                                                         
       x++;
    }
   }                         
-  var arr2=this.state.lists;                //三星组
-  var q;
-  var all2=new Array()
-  var x=0;
-  for (i=0; i<arr2.length; i++){
-   for(p=i+1; p<arr2.length; p++){
-    for(q=p+1; q<arr2.length;q++){
-      all2[x]=[arr2[i],arr2[p],arr2[q]];
-      x++;
-   } }
-}                            
-  var arr3=this.state.lists;                //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}  
-  var dd='三中二赔率:22        三中三赔率：125';           
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
+              //三星组
+                            
+  var dd='三星赔率：890'; 
+  var ddd=arr2.length*all1.length;          
+  this.setState({sss2:ddd,paytimes:dd,info:info})
+
 }
 add0(e){                                                                                           //单号码添加
   const lists=this.state.lists;
@@ -104,7 +101,22 @@ add0(e){                                                                        
         }
   }                                        
   this.setState({lists:lists})
-  var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -112,7 +124,8 @@ add0(e){                                                                        
       x++;
    }
   }                         
-  var arr2=this.state.lists;                //三星组
+
+                //三星组
   var q;
   var all2=new Array()
   var x=0;
@@ -123,21 +136,11 @@ add0(e){                                                                        
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}  
-  var dd='三中二赔率:22        三中三赔率：125';            
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
+  var dd='三星赔率：890';        
+  var ddd=arr2.length*all1.length;   
+  this.setState({sss2:ddd,paytimes:dd,info:info})
 }
+
 componentWillMount(){
 this.getData();
 this.users();
@@ -251,7 +254,22 @@ if(e==0){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+  var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -259,7 +277,8 @@ if(e==0){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+
+                //三星组
   var q;
   var all2=new Array()
   var x=0;
@@ -269,21 +288,9 @@ if(e==0){
       all2[x]=[arr2[i],arr2[p],arr2[q]];
       x++;
    } }
-}                            
-  var arr3=this.state.lists;                   //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}                             
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
-     
+}                               
+  var ddd=arr2.length*all1.length;          
+  this.setState({sss2:ddd})
 }
 add2(e){                                                                                     //尾号号码添加
   const lists=this.state.lists;
@@ -391,7 +398,22 @@ if(e==9){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+  var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -399,7 +421,8 @@ if(e==9){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+
+                //三星组
   var q;
   var all2=new Array()
   var x=0;
@@ -409,21 +432,9 @@ if(e==9){
       all2[x]=[arr2[i],arr2[p],arr2[q]];
       x++;
    } }
-}                            
-  var arr3=this.state.lists;                   //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}                             
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
-     
+}                               
+  var ddd=arr2.length*all1.length;          
+  this.setState({sss2:ddd})
 }
 add3(e){                                                                                     //生肖号码添加
   const lists=this.state.lists;
@@ -551,7 +562,22 @@ if(e==11){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+  var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -559,7 +585,8 @@ if(e==11){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+
+                //三星组
   var q;
   var all2=new Array()
   var x=0;
@@ -569,23 +596,10 @@ if(e==11){
       all2[x]=[arr2[i],arr2[p],arr2[q]];
       x++;
    } }
-}                            
-  var arr3=this.state.lists;                   //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}                             
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
-     
+}                                 
+  var ddd=arr2.length*all1.length;          
+  this.setState({sss2:ddd})
 }
-
 add4(e){                                                                                     //其他号码添加
   const lists=this.state.lists;
   var i;
@@ -663,7 +677,22 @@ if(e==6){
 }
 
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+  var n=this.state.lists;                //二星组
+  var m1=0;
+  var m2=0;
+  var arr1=[];
+  var arr2=[]
+  for(m1=0;m1<n.length;m1++){
+      if(n[m1]==']'){m2=m1}}
+  for(m1=0;m1<n.length;m1++){
+      if(m1<m2){
+
+      arr1.push(n[m1]);
+      }
+      if(m1>m2){
+      arr2.push(n[m1]);
+      }
+  }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -671,7 +700,8 @@ if(e==6){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+
+               //三星组
   var q;
   var all2=new Array()
   var x=0;
@@ -681,21 +711,9 @@ if(e==6){
       all2[x]=[arr2[i],arr2[p],arr2[q]];
       x++;
    } }
-}                            
-  var arr3=this.state.lists;                   //四星组
-  var r;
-  var all3=new Array()
-  var x=0;
-  for (i=0; i<arr3.length; i++){
-   for(p=i+1; p<arr3.length; p++){
-    for(q=p+1; q<arr3.length;q++){
-     for(r=q+1;r<arr3.length;r++){
-      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
-      x++;
-   } }}
-}                             
-  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
-     
+}                               
+  var ddd=arr2.length*all1.length;          
+  this.setState({sss2:ddd})
 }
 
 
@@ -722,7 +740,20 @@ if(e==6){
         window.location.href = "/#/taiwanlotto/"                                         
 }
 }
-
+team(){
+   var p;
+   var i;
+   var a=this.state.lists;
+   a.push(']');
+   this.setState({lists:a});
+   for (var i = 0; i < a.length; i++) {              
+        for (p = i + 1; p < a.length; p++) {
+            if (a[i] === a[p]) {
+                a.splice(p, 1);
+            }
+        }
+  }  
+}
 
 
 
@@ -743,7 +774,7 @@ if(e==6){
     <div class='col right'>
       <div>
         <h1 class='index'>游戏玩法</h1>
-        <Select defaultValue="三中二" style={{ width: 120 }} onChange={this.add5}>
+        <Select defaultValue="双星连柱碰" style={{ width: 120 }} onChange={this.add5}>
                        <Option value='0'>连碰快速</Option>
                        <Option value='1'>三中二</Option>
                        <Option value="2">二中特</Option>
@@ -873,17 +904,18 @@ if(e==6){
                        <Option value="6">绿</Option>
                  </Select>
                 </div>
+                 <input type='button' class='backblue' name="add3" onClick={this.team} value='二星组选完'/>
         </div>
         <div class='col game3'>
           <div class='flex'>
-            <div class='col game3'>三中二：</div><div class='col game3'>{this.state.sss2}碰</div>
+            <div class='col game3'>三星：</div><div class='col game3'>{this.state.sss2}碰</div>
             <input type='text' class='col game3'
 name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
           </div>         
          </div>
        </div>
          <textarea name='allnum' value={this.state.lists}/><input type='button' onClick={this.delete} value='清除'/>
-         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='3x2'  class='superstyle' /><input type='text' name='twostarnum' value='0'  class='superstyle' /><input type='text' name='fourstarnum' value='0'  class='superstyle' /><input type='text' name='twostarmoney' value='0'  class='superstyle' /><input type='text' name='fourstarmoney' value='0'  class='superstyle' /><input type='text' name='threestarnum' value={this.state.sss2}  class='superstyle' />
+         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='sxlzp'  class='superstyle' /><input type='text' name='twostarnum' value='0'  class='superstyle' /><input type='text' name='fourstarnum' value='0'  class='superstyle' /><input type='text' name='twostarmoney' value='0'  class='superstyle' /><input type='text' name='fourstarmoney' value='0'  class='superstyle' /><input type='text' name='threestarnum' value={this.state.sss2}  class='superstyle' />
     </form>
     <form action="http://127.0.0.1:8081/addnum" method='post'>
        <input type='text' name='link' value={this.state.link1}  class='superstyle' /><input type="submit" value='随即生成号'/>
@@ -937,4 +969,4 @@ name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' def
     </body>);
   }
 }
-export default App2;
+export default App5;

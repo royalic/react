@@ -171,7 +171,7 @@ money()                                                                         
 }
 
     handleClick(){                                                                               //links
-        window.location.href = "/"
+        window.location.href = "/#/select"
     }	
     lownum(){
         window.location.reload(true);
@@ -707,16 +707,16 @@ add5(e){                                                                        
         window.location.href = "/#/taiwanlotto3x2/"                              
 }
 if(e==2){
-        window.location.href = "/#/taiwanlotto/"                                         
+        window.location.href = "/#/taiwanlotto2xs/"                                         
 }
 if(e==3){
-        window.location.href = "/#/taiwanlotto/"                                         
+        window.location.href = "/#/taiwanlottolzks/"                                         
 }
 if(e==4){
-        window.location.href = "/#/taiwanlotto/"                                          
+        window.location.href = "/#/taiwanlottosxlzp/"                                          
 }
 if(e==5){
-        window.location.href = "/#/taiwanlotto/"                                         
+        window.location.href = "/#/taiwanlottoslp/"                                         
 }
 if(e==6){
         window.location.href = "/#/taiwanlotto/"                                         

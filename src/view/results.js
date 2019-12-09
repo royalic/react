@@ -1,9 +1,7 @@
 var mysql = require('mysql');
 var schedule=require('node-schedule');
 function result(){
-var rule2=new schedule.RecurrenceRule();
-rule2.minute=[0,30];
-var k=schedule.scheduleJob(rule2,function(){
+
 var connection = mysql.createPool({
         host: 'localhost',
         user: 'root',
@@ -60,8 +58,6 @@ var results = () => new Promise(function(resolve,reject){
        var p6=value2[0].sixthnum;
        var p7=value2[0].supernum;
        var arr2=[p,p1,p2,p3,p4,p5,p6];
-       console.log(arr);
-       console.log(value2[0]);
        if(arr[1]==arr2[0]){console.log('yes')}else{console.log('no')}
        var q;
        var t=0; 
@@ -93,8 +89,6 @@ var results = () => new Promise(function(resolve,reject){
           z=z1*75.6*10+z2*890*10+z3*13500*5;console.log(z1);}
       if(t==6){
           z=z1*75.6*15+z2*890*20+z3*13500*15;console.log(z1);}
-      console.log(t);
-      console.log(z);
       connection.query(
         "update payinfo set getcount=?,getmoney=? where id=? and time=?",[t,z,value[o].id,value2[0].link],
         function select(err, results) {
@@ -110,6 +104,6 @@ var results = () => new Promise(function(resolve,reject){
 }
 })
 
-});});
+});
 }
 exports.result=result;

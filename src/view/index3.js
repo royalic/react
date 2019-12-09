@@ -3,7 +3,7 @@ import { Select } from 'antd';
 import axios from 'axios';
 import './index.css';
 const {Option}=Select;
-class App2 extends Component {
+class App3 extends Component {
     constructor(props){
        super(props);
        this.add=this.add.bind(this);
@@ -86,7 +86,7 @@ add(e){                                                                         
       x++;
    } }}
 }  
-  var dd='三中二赔率:22        三中三赔率：125';           
+  var dd='二中特赔率:36        二中二赔率：58';           
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
 }
 add0(e){                                                                                           //单号码添加
@@ -135,7 +135,7 @@ add0(e){                                                                        
       x++;
    } }}
 }  
-  var dd='三中二赔率:22        三中三赔率：125';            
+  var dd='二中二赔率:36        二中特赔率：58';            
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
 }
 componentWillMount(){
@@ -710,7 +710,7 @@ if(e==2){
         window.location.href = "/#/taiwanlotto2xs/"                                         
 }
 if(e==3){
-        window.location.href = "/#/taiwanlottolzks/"                                         
+        window.location.href = "/#/taiwanlotto/"                                         
 }
 if(e==4){
         window.location.href = "/#/taiwanlottosxlzp/"                                          
@@ -743,7 +743,7 @@ if(e==6){
     <div class='col right'>
       <div>
         <h1 class='index'>游戏玩法</h1>
-        <Select defaultValue="三中二" style={{ width: 120 }} onChange={this.add5}>
+        <Select defaultValue="二中特" style={{ width: 120 }} onChange={this.add5}>
                        <Option value='0'>连碰快速</Option>
                        <Option value='1'>三中二</Option>
                        <Option value="2">二中特</Option>
@@ -876,14 +876,14 @@ if(e==6){
         </div>
         <div class='col game3'>
           <div class='flex'>
-            <div class='col game3'>三中二：</div><div class='col game3'>{this.state.sss2}碰</div>
+            <div class='col game3'>二中特：</div><div class='col game3'>{this.state.sss1}碰</div>
             <input type='text' class='col game3'
-name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
+name='twostarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
           </div>         
          </div>
        </div>
          <textarea name='allnum' value={this.state.lists}/><input type='button' onClick={this.delete} value='清除'/>
-         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='3x2'  class='superstyle' /><input type='text' name='twostarnum' value='0'  class='superstyle' /><input type='text' name='fourstarnum' value='0'  class='superstyle' /><input type='text' name='twostarmoney' value='0'  class='superstyle' /><input type='text' name='fourstarmoney' value='0'  class='superstyle' /><input type='text' name='threestarnum' value={this.state.sss2}  class='superstyle' />
+         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='2xs'  class='superstyle' /><input type='text' name='threestarnum' value='0'  class='superstyle' /><input type='text' name='fourstarnum' value='0'  class='superstyle' /><input type='text' name='threestarmoney' value='0'  class='superstyle' /><input type='text' name='fourstarmoney' value='0'  class='superstyle' /><input type='text' name='twostarnum' value={this.state.sss1}  class='superstyle' />
     </form>
     <form action="http://127.0.0.1:8081/addnum" method='post'>
        <input type='text' name='link' value={this.state.link1}  class='superstyle' /><input type="submit" value='随即生成号'/>
@@ -937,4 +937,4 @@ name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' def
     </body>);
   }
 }
-export default App2;
+export default App3;

@@ -1,5 +1,9 @@
 var result=require('./results');
 var resulttwo=require('./resultstwo');
+var resultthree=require('./resultthree');
+var resultfour=require('./resultfour');
+var resultfive=require('./resultfive');
+var resultsix=require('./resultsix');
 var mysql = require('mysql');
 var connection = mysql.createPool({
         host: 'localhost',
@@ -10,7 +14,7 @@ var connection = mysql.createPool({
     });
 var results = () => new Promise(function(resolve,reject){
     connection.query(
-        "SELECT allnum FROM payinfo order by id desc",
+        "SELECT allnum,type FROM payinfo order by id desc",
         function select(err, results) {
             if (results) {
                 resolve(results);
@@ -25,7 +29,8 @@ var results = () => new Promise(function(resolve,reject){
 results().then(function(value){
 for (o=0; o<value.length;o++){
        var n=value[o].allnum;
-       var m=value[o].type;       
+       var m=value[o].type;
+       console.log(m);
        if(m=='LPKS'){
        var i; 
        var arr=[];
@@ -36,6 +41,11 @@ for (o=0; o<value.length;o++){
            if(arr[i]==46){resulttwo.resulttwo();}else{
            result.result();}
        }
-}}
+}
+       if(m=='3x2'){resultthree.resultthree();}
+       if(m=='2xs'){resultfour.resultfour();}
+       if(m=='sxlzp'){resultfive.resultfive();}
+       if(m=='slp'){resultsix.resultsix();} 
+}
 });
        

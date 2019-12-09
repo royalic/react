@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 var schedule=require('node-schedule');
-function resulttwo(){
+function resultthree(){
 
 var connection = mysql.createPool({
         host: 'localhost',
@@ -58,8 +58,6 @@ var results = () => new Promise(function(resolve,reject){
        var p6=value2[0].sixthnum;
        var p7=value2[0].supernum;
        var arr2=[p,p1,p2,p3,p4,p5,p6];
-       console.log(arr);
-       console.log(value2[0].link);
        if(arr[1]==arr2[0]){console.log('yes')}else{console.log('no')}
        var q;
        var t=0; 
@@ -81,18 +79,16 @@ var results = () => new Promise(function(resolve,reject){
       if(t==1){
           z=0;}
       if(t==2){
-          z=z1*74.09*1;
+          z=z2*22*1;
           console.log(z1);}
       if(t==3){
-          z=z1*74.09*3+z2*890*1;console.log(z1);}
+          z=z2*22*3+z2*125*1;console.log(z1);}
       if(t==4){
-          z=z1*74.09*6+z2*890*4+z3*13500*1;console.log(z1);}
+          z=z2*22*6+z2*125*4;console.log(z1);}
       if(t==5){
-          z=z1*74.09*10+z2*890*10+z3*13500*5;console.log(z1);}
+          z=z2*22*10+z2*125*10;console.log(z1);}
       if(t==6){
-          z=z1*74.09*15+z2*890*20+z3*13500*15;console.log(z1);}
-      console.log(t);
-      console.log(z);
+          z=z2*22*15+z2*125*20;console.log(z1);}
       connection.query(
         "update payinfo set getcount=?,getmoney=? where id=? and time=?",[t,z,value[o].id,value2[0].link],
         function select(err, results) {
@@ -108,5 +104,6 @@ var results = () => new Promise(function(resolve,reject){
 }
 })
 
-});}
-exports.resulttwo=resulttwo;
+});
+}
+exports.resultthree=resultthree;

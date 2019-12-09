@@ -44,7 +44,7 @@ testone(){
       elements.push(
         <div>
           <a class='col hiso num'>游戏： {item.type}</a>&nbsp;<a class='col hiso num'>期数： {item.time}</a>&nbsp;<a class='col hiso num'>二号组数： {item.twostarnum}</a>&nbsp;<a class='col hiso num'>三号组数：{item.threestarnum}</a>&nbsp;<a class='col hiso num'>四号组数：{item.fourstarnum}</a>&nbsp;
-          <a class='col hiso num'>二号每注金额：{item.twostarmoney}</a>&nbsp;<a class='col hiso num'>三号每注金额：{item.threestarmoney}</a>&nbsp;<a class='col hiso num'>四号每注金额：{item.fourstarmoney}</a>&nbsp;<a class='col game2 num'>所选号码：{item.allnum}</a>&nbsp;<a class='col hiso num'>中奖号数：{item.getcount}</a>&nbsp;<a class='col hiso num'>金额：{item.getmoney}</a>
+          <a class='col hiso num'>二号每注金额：{item.twostarmoney}</a>&nbsp;<a class='col hiso num'>三号每注金额：{item.threestarmoney}</a>&nbsp;<a class='col hiso num'>四号每注金额：{item.fourstarmoney}</a>&nbsp;<a>所选号码：<textarea name='col hiso num' value={item.allnum}/></a>&nbsp;<a class='col hiso num'>中奖号数：{item.getcount}</a>&nbsp;<a class='col hiso num'>金额：{item.getmoney}</a>
           <div class='col center'></div>
         </div>
       )}
@@ -61,7 +61,7 @@ testtwo(){
       elements.push(
         <div>
           <a class='col hiso num'>游戏： {item.type}</a>&nbsp;<a class='col hiso num'>期数： {item.time}</a>&nbsp;<a class='col hiso num'>二号组数： {item.twostarnum}</a>&nbsp;<a class='col hiso num'>三号组数：{item.threestarnum}</a>&nbsp;<a class='col hiso num'>四号组数：{item.fourstarnum}</a>&nbsp;
-          <a class='col hiso num'>二号每注金额：{item.twostarmoney}</a>&nbsp;<a class='col hiso num'>三号每注金额：{item.threestarmoney}</a>&nbsp;<a class='col hiso num'>四号每注金额：{item.fourstarmoney}</a>&nbsp;<a class='col game2 num'>所选号码：{item.allnum}</a>&nbsp;<a class='col hiso num'>中奖号数：{item.getcount}</a>&nbsp;<a class='col hiso num'>金额：{item.getmoney}</a>
+          <a class='col hiso num'>二号每注金额：{item.twostarmoney}</a>&nbsp;<a class='col hiso num'>三号每注金额：{item.threestarmoney}</a>&nbsp;<a class='col hiso num'>四号每注金额：{item.fourstarmoney}</a>&nbsp;<textarea name='allnum' value={item.allnum}/>&nbsp;<a class='col hiso num'>中奖号数：{item.getcount}</a>&nbsp;<a class='col hiso num'>金额：{item.getmoney}</a>
           <div class='col center'></div>
         </div>
       )
@@ -92,9 +92,8 @@ this.getDatatwo();
        <br/>
        <br/>
 <br/>
-       <hr /> 
-       <td>下注历史:</td>
-       {this.testtwo()}
+
+
         
       </div>
     );

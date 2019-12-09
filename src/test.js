@@ -66,6 +66,10 @@ req.body.fourstarmoney,req.body.allnum,req.body.type];
   res.redirect('http://127.0.0.1:3000/#/taiwanlotto');}   
   if(req.body.type=='3x2'){
   res.redirect('http://127.0.0.1:3000/#/taiwanlotto3x2');}
+    if(req.body.type=='2xs'){
+  res.redirect('http://127.0.0.1:3000/#/taiwanlotto2xs');}
+  if(req.body.type=='sxlzp'){
+  res.redirect('http://127.0.0.1:3000/#/taiwanlottosxlzp');}
 })
 app.post('/login',function(req,res){                                                 //login
     var cc=req.body.name;
@@ -88,7 +92,7 @@ app.post('/login',function(req,res){                                            
       console.log(value.length);
       if(value.length=1){
               if(value[0].password==password){
-                res.redirect('http://127.0.0.1:3000/#/')}
+                res.redirect('http://127.0.0.1:3000/#/select')}
               else{
                 res.redirect('http://127.0.0.1:3000/#/login')}}
       if(value.length=0){res.redirect('http://127.0.0.1:3000/#/login')}})
@@ -184,7 +188,7 @@ app.post('/findhistory',function(req,res){
      for(i=0;i<values.length;i++){
         console.log(req.body.find);
         if(values[i]===req.body.find){j=1}
-        else{j=0;finddate=0}}
+        else{j=0}}
      if(j=0){res.redirect('http://127.0.0.1:3000/#/taiwanlottohistory')}
      if(j=1){
     var finddata= () => new Promise(function(resolve,reject){

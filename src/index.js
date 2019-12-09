@@ -10,17 +10,25 @@ import historya from './view/history1'
 import numhistory from './view/numhistory'
 import numhistoryb from './view/numhistory1'
 import App2 from './view/index2'
+import App3 from './view/index3'
+import App4 from './view/index4'
+import App5 from './view/index5'
+import App6 from './view/index6'
 
 const SliderComponent = () => (
   <Switch>
-    <Route path='/' exact component={App} />
+    <Route path="/" exact component={login}/>
+    <Route path='/select'  component={App} />
     <Route path="/taiwanlotto" component={Test}/>
     <Route path="/taiwanlottohistory" component={history}/>
-    <Route path="/login" component={login}/>
     <Route path="/taiwanlottohistorya" component={historya}/>
     <Route path='/taiwanlottonumhistory' component={numhistory}/>
     <Route path='/taiwanlottonumhistoryb' component={numhistoryb}/>
     <Route path='/taiwanlotto3x2'  component={App2} />
+    <Route path='/taiwanlotto2xs'  component={App3} />
+    <Route path='/taiwanlottolzks'  component={App4} />
+    <Route path='/taiwanlottosxlzp'  component={App5} />
+    <Route path='/taiwanlottoslp'  component={App6} />
   </Switch>
 )
 
