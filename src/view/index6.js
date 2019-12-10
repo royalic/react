@@ -88,7 +88,7 @@ add(e){                                                              //single nu
       x++;
    }
   }                      
-  var dd='三星赔率：890'; 
+  var dd='四星赔率：13500'; 
   var ddd=all2.length*all1.length;          
   this.setState({sss2:ddd,paytimes:dd,info:info})
 
@@ -141,7 +141,7 @@ var m1=0;
       x++;
    }
   }                            
-  var dd='三星赔率：890';        
+  var dd='四星赔率：13500';        
   var ddd=all2.length*all1.length;   
   this.setState({sss2:ddd,paytimes:dd,info:info})
 }

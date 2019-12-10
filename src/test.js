@@ -74,6 +74,8 @@ req.body.fourstarmoney,req.body.allnum,req.body.type];
   res.redirect('http://127.0.0.1:3000/#/taiwanlottolzks');}
   if(req.body.type=='lpbz'){
   res.redirect('http://127.0.0.1:3000/#/taiwanlottolpbz');}
+  if(req.body.type=='slp'){
+  res.redirect('http://127.0.0.1:3000/#/taiwanlottoslp');}
 })
 app.post('/login',function(req,res){                                                 //login
     var cc=req.body.name;
