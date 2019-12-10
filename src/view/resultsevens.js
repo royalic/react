@@ -195,9 +195,9 @@ var results = () => new Promise(function(resolve,reject){
        if(t1>0&&t2>0&&t3==0){
        z=t1*t2*74.09*z1}
        if(t1>0&&t2>0&&t3>0&&t4==0){
-       z=t1*t2*t3*890*z2}
+       z=t1*t2*t3*890*z2+t1*t2*74.09*z1}
        if(t1>0&&t2>0&&t3>0&&t4>0){
-       z=t1*t2*t3*t4*13500*z3}
+       z=t1*t2*t3*t4*13500*z3+t1*t2*t3*890*z2+t1*t2*74.09*z1}
        console.log(z);
        var t=t1+t2+t3+t4;
        connection.query(

@@ -18,7 +18,7 @@ var connection = mysql.createPool({
     });
 var bodyParser=require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-app.post('/commit',function(req,res){                                         //commit data what you do
+app.post('/commit',function(req,res){                           //commit data what you do
   console.log(req.body);
   var name=req.body.name;
   var payinfo=[req.body.time,req.body.name,req.body.twostarnum,req.body.threestarnum,req.body.fourstarnum,req.body.twostarmoney,req.body.threestarmoney,
