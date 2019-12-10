@@ -3,7 +3,7 @@ import { Select } from 'antd';
 import axios from 'axios';
 import './index.css';
 const {Option}=Select;
-class App2 extends Component {
+class App7 extends Component {
     constructor(props){
        super(props);
        this.add=this.add.bind(this);
@@ -15,7 +15,7 @@ class App2 extends Component {
        this.valueChange=this.valueChange.bind(this);
        this.state={link1:[],link2:[],firstnum1:[],firstnum2:[],secondnum1:[],secondnum2:[],thirdnum1:[],
 thirdnum2:[],forthnum1:[],forthnum2:[],fifthnum1:[],fifthnum2:[],sixthnum1:[],sixthnum2:[],supernum1:[],
-supernum2:[],name:[],value:[],lists:[],sss1:[0],sss2:[0],sss3:[0],inp:[],inp1:[],inp2:[],tim:[],nametest:[],valuetest:[],time:[],paytimes:[],info:[]}
+supernum2:[],name:[],value:[],lists:[],sss1:[0],sss2:[0],sss3:[0],inp:[],inp1:[],inp2:[],tim:[],nametest:[],valuetest:[],time:[],paytimes:[],info:[],sss:[0],aaa:[1]}
     }  
    getData(){                                                                         //获取头2个中奖号码
 fetch(`http://127.0.0.1:8081/json`,{
@@ -86,7 +86,7 @@ add(e){                                                                         
       x++;
    } }}
 }  
-  var dd='三中二赔率:22        三中三赔率：125';           
+  var dd='二星赔率:75.6         三星赔率:890                       四星赔率:13500';            
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
 }
 add0(e){                                                                                           //单号码添加
@@ -135,7 +135,7 @@ add0(e){                                                                        
       x++;
    } }}
 }  
-  var dd='三中二赔率:22        三中三赔率：125';            
+  var dd='二星赔率:74.09         三星赔率:890                       四星赔率:13500';            
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
 }
 componentWillMount(){
@@ -171,7 +171,7 @@ money()                                                                         
 }
 
     handleClick(){                                                                               //links
-        window.location.href = "/"
+        window.location.href = "/#/select"
     }	
     lownum(){
         window.location.reload(true);
@@ -723,7 +723,57 @@ if(e==6){
 }
 }
 
+starhid(e){
+  var a=this.state.sss1;
+  var b=this.state.sss2;
+  var c=this.state.sss3;
+  const d=e.target.getAttribute("value");
+  if(d=='二星'){
+  this.setState({sss:a,aaa:1});}
+  if(d=='三星'){
+  this.setState({sss:b,aaa:2});}
+  if(d=='四星'){
+  this.setState({sss:c,aaa:3});}
+}
+resul(){
+  if(this.state.aaa==1){
+  return(
+    <div>共选择了{(this.state.lists).length}球，二星碰数为{this.state.sss1}碰</div>)}
+  if(this.state.aaa==2){
+    return(
+    <div>共选择了{(this.state.lists).length}球，三星碰数为{this.state.sss2}碰</div>)}
+  if(this.state.aaa==3){
+    return(
+    <div>共选择了{(this.state.lists).length}球，四星碰数为{this.state.sss3}碰</div>)}
+  }
 
+deletenum(){
+  var arr=['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49'];
+  var a=this.state.lists;
+  var arr2=[]
+  var i;
+  var j;
+  var p;
+  var q;
+  for(i=0;i<a.length;i++){
+    for(j=0;j<arr.length;j++){
+      if(+a[i]==+arr[j]){
+          arr.splice(j, 1);
+      }
+    }
+   }
+   for (var i = 0; i < arr.length; i++) {               //清除重复号码
+        for (p = i + 1; p < arr.length; p++) {
+            if (arr[i] === arr[p]) {
+                arr.splice(p, 1);
+            }
+        }
+   }   
+   this.setState({lists:arr});
+
+
+
+}
 
 
 
@@ -743,7 +793,7 @@ if(e==6){
     <div class='col right'>
       <div>
         <h1 class='index'>游戏玩法</h1>
-        <Select defaultValue="三中二" style={{ width: 120 }} onChange={this.add5}>
+        <Select defaultValue="连碰标准" style={{ width: 120 }} onChange={this.add5}>
                        <Option value='0'>连碰快速</Option>
                        <Option value='1'>三中二</Option>
                        <Option value="2">二中特</Option>
@@ -876,14 +926,23 @@ if(e==6){
         </div>
         <div class='col game3'>
           <div class='flex'>
-            <div class='col game3'>三中二：</div><div class='col game3'>{this.state.sss2}碰</div>
-            <input type='text' class='col game3'
-name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
+            <input type='button'  name='2x' onClick={this.starhid.bind(this)} value='二星'/><input type='text' value={this.state.sss1} name='twostarnum' class='superstyle'/>
+            <input type='text' name='twostarmoney' onChange={this.inputvalue.bind(this)} class='starnum' defaultValue='0'/>
+          </div>
+          <div class='flex'>
+            <input type='button'  name='2x' onClick={this.starhid.bind(this)} value='三星'/><input type='text' value={this.state.sss2} name='threestarnum' class='superstyle' />
+            <input type='text' name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
           </div>         
+          <div class='flex'>
+            <input type='button'  name='4x' onClick={this.starhid.bind(this)} value='四星'/><input type='text' value={this.state.sss3} name='fourstarnum' class='superstyle'/>
+            <input type='text' name='fourstarmoney' onChange={this.inputvalue2.bind(this)} class='starnum' defaultValue='0'/>
+          </div>
+          <input type='button'  name="add3" onClick={this.deletenum.bind(this)} value='不出牌'/>
+           {this.resul()}
          </div>
        </div>
          <textarea name='allnum' value={this.state.lists}/><input type='button' onClick={this.delete} value='清除'/>
-         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='3x2'  class='superstyle' /><input type='text' name='twostarnum' value='0'  class='superstyle' /><input type='text' name='fourstarnum' value='0'  class='superstyle' /><input type='text' name='twostarmoney' value='0'  class='superstyle' /><input type='text' name='fourstarmoney' value='0'  class='superstyle' /><input type='text' name='threestarnum' value={this.state.sss2}  class='superstyle' />
+         <input type="submit" value='提交数据' onClick={this.money}/>   <input type='text' name='name' value={this.state.name}  class='superstyle' /><input type='text' name='time' value={this.state.time}  class='superstyle' /><input type='text' name='type' value='lpbz'  class='superstyle' />
     </form>
     <form action="http://127.0.0.1:8081/addnum" method='post'>
        <input type='text' name='link' value={this.state.link1}  class='superstyle' /><input type="submit" value='随即生成号'/>
@@ -937,4 +996,4 @@ name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' def
     </body>);
   }
 }
-export default App2;
+export default App7;

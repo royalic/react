@@ -201,7 +201,7 @@ add1(e){                                                                        
   var p;
   var x=0;
   if(e==1){
-  lists.push('11','12','13','14','15','16','17','18','19');
+  lists.push('10','11','12','13','14','15','16','17','18','19');
   for (var i = 0; i < lists.length; i++) {               
         for (p = i + 1; p < lists.length; p++) {
             if (lists[i] === lists[p]) {
@@ -719,7 +719,7 @@ if(e==5){
         window.location.href = "/#/taiwanlottoslp/"                                         
 }
 if(e==6){
-        window.location.href = "/#/taiwanlotto/"                                         
+        window.location.href = "/#/taiwanlottolpbz/"                                         
 }
 }
 

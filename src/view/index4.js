@@ -81,15 +81,15 @@ add(e){                                                                         
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -103,7 +103,7 @@ add(e){                                                                         
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
@@ -140,7 +140,7 @@ add0(e){                                                                        
   }                                        
   this.setState({lists:lists})
   var n=this.state.lists;                //二星组
-  var m1=0;
+   var m1=0;
   var m2=0;
   var m3=0;
   var m4=0
@@ -164,15 +164,15 @@ add0(e){                                                                        
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -186,11 +186,11 @@ add0(e){                                                                        
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
-}                            
+}                           
              //四星组
   var r;
   var all3=new Array()
@@ -271,7 +271,7 @@ add1(e){                                                                        
   var p;
   var x=0;
   if(e==1){
-  lists.push('11','12','13','14','15','16','17','18','19');
+  lists.push('10','11','12','13','14','15','16','17','18','19');
   for (var i = 0; i < lists.length; i++) {               
         for (p = i + 1; p < lists.length; p++) {
             if (lists[i] === lists[p]) {
@@ -346,15 +346,15 @@ if(e==0){
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -368,11 +368,11 @@ if(e==0){
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
-}                            
+}                           
              //四星组
   var r;
   var all3=new Array()
@@ -518,15 +518,15 @@ if(e==9){
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -540,11 +540,11 @@ if(e==9){
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
-}                            
+}                           
              //四星组
   var r;
   var all3=new Array()
@@ -686,7 +686,7 @@ if(e==11){
 }
      this.setState({lists:lists})
   var n=this.state.lists;                //二星组
-  var m1=0;
+   var m1=0;
   var m2=0;
   var m3=0;
   var m4=0
@@ -710,15 +710,15 @@ if(e==11){
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -732,11 +732,11 @@ if(e==11){
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
-}                            
+}                           
              //四星组
   var r;
   var all3=new Array()
@@ -853,15 +853,15 @@ if(e==6){
       if(m4>0){
       if(m1>m3&&m1<m4){
       arr3.push(n[m1]);
-      }else{
-      if(m1>m3){
-      arr3.push(n[m1]);}
       }
       if(m1>m4){
       arr4.push(n[m1]);
       }
-      }
-      }else{arr2.push(n[m1]);}   
+      }else{
+      if(m1>m3){
+      arr3.push(n[m1]);}}
+      }else{
+      if(m1>m2){arr2.push(n[m1]);}}   
   }
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
@@ -875,7 +875,7 @@ if(e==6){
   var x=0;
   for (i=0; i<arr1.length; i++){
    for(p=0; p<arr2.length; p++){
-    for(q=0; q<arr4.length;q++){
+    for(q=0; q<arr3.length;q++){
       all2[x]=[arr1[i],arr2[p],arr3[q]];
       x++;
    } }
@@ -916,7 +916,7 @@ if(e==5){
         window.location.href = "/#/taiwanlottoslp/"                                         
 }
 if(e==6){
-        window.location.href = "/#/taiwanlotto/"                                         
+        window.location.href = "/#/taiwanlottolpbz/"                                         
 }
 }
 team1(){

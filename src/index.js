@@ -14,6 +14,7 @@ import App3 from './view/index3'
 import App4 from './view/index4'
 import App5 from './view/index5'
 import App6 from './view/index6'
+import App7 from './view/index7'
 
 const SliderComponent = () => (
   <Switch>
@@ -29,6 +30,7 @@ const SliderComponent = () => (
     <Route path='/taiwanlottolzks'  component={App4} />
     <Route path='/taiwanlottosxlzp'  component={App5} />
     <Route path='/taiwanlottoslp'  component={App6} />
+    <Route path='/taiwanlottolpbz'  component={App7} />
   </Switch>
 )
 
