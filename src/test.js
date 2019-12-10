@@ -304,11 +304,22 @@ app.post('/addnum',function(req,res){
     var n=+req.body.link+1;
     var n1=Math.round(Math.random()*49);
     var n2=Math.round(Math.random()*49);
+    if(n1==n2){n2=Math.round(Math.random()*49);};
     var n3=Math.round(Math.random()*49);
+    if(n1==n3||n2==n3){n3=Math.round(Math.random()*49);};
+    if(n1==n3||n2==n3){n3=Math.round(Math.random()*49);};
     var n4=Math.round(Math.random()*49);
+    if(n1==n4||n2==n4||n3==n4){n4=Math.round(Math.random()*49);};
+    if(n1==n4||n2==n4||n3==n4){n4=Math.round(Math.random()*49);};
     var n5=Math.round(Math.random()*49);
+    if(n1==n5||n2==n5||n3==n5||n4==n5){n5=Math.round(Math.random()*49);};
+    if(n1==n5||n2==n5||n3==n5||n4==n5){n5=Math.round(Math.random()*49);};
     var n6=Math.round(Math.random()*49);
+    if(n1==n6||n2==n6||n3==n6||n4==n6||n5==n6){n6=Math.round(Math.random()*49);};
+    if(n1==n6||n2==n6||n3==n6||n4==n6||n5==n6){n6=Math.round(Math.random()*49);};
     var n7=Math.round(Math.random()*49);
+    if(n1==n7||n2==n7||n3==n7||n4==n7||n5==n7||n6==n7){n7=Math.round(Math.random()*49);};
+    if(n1==n7||n2==n7||n3==n7||n4==n7||n5==n7||n6==n7){n7=Math.round(Math.random()*49);};
     var parmas=[n,n1,n2,n3,n4,n5,n6,n7];
     connection.query(
         "insert into taiwanlottoLottery(link,firstnum,secondnum,thirdnum,forthnum,fifthnum,sixthnum,supernum) values(?,?,?,?,?,?,?,?)",parmas,

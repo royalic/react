@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
-import axios from 'axios';
 import './index.css';
 class login extends Component {
   constructor(props){

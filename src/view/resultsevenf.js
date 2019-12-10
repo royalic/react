@@ -63,7 +63,7 @@ var results = () => new Promise(function(resolve,reject){
        var p5=value2[0].fifthnum;
        var p6=value2[0].sixthnum;
        var p7=value2[0].supernum;
-       var arr0=[p,p1,p2,p3,p4,p5,p6];                                 //prize number
+       var arr0=[p,p1,p2,p3,p4,p5,p6];                                 //winning number
        console.log(arr0);
        if(n.length==1){}
        if(n.length==2){

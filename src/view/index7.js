@@ -17,7 +17,7 @@ class App7 extends Component {
 thirdnum2:[],forthnum1:[],forthnum2:[],fifthnum1:[],fifthnum2:[],sixthnum1:[],sixthnum2:[],supernum1:[],
 supernum2:[],name:[],value:[],lists:[],sss1:[0],sss2:[0],sss3:[0],inp:[],inp1:[],inp2:[],tim:[],nametest:[],valuetest:[],time:[],paytimes:[],info:[],sss:[0],aaa:[1]}
     }  
-   getData(){                                                                         //获取头2个中奖号码
+   getData(){                                             //get the last two winning number
 fetch(`http://127.0.0.1:8081/json`,{
 method: 'GET'
 }).then(res => res.json()).then(
@@ -31,7 +31,7 @@ sixthnum2:data[1].sixthnum,supernum2:data[1].supernum,time:data[0].link+1})
 }
 )
 }
-users(){                                                                                     //获取用户name,balance数据
+users(){                                                  //get user information
 fetch(`http://127.0.0.1:8081/user`,{
 method: 'GET'
 }).then(res => res.json()).then(
@@ -40,14 +40,14 @@ this.setState({name:data[0].name,value:data[0].balance})
 }
 )
 }
-add(e){                                                                                           //单号码添加
+add(e){                                                                       //single number added
   const lists=this.state.lists;
   var i;
   var p;
   var x=0;
   const info=e.target.getAttribute("value");
   lists.push(info);
-  for (var i = 0; i < lists.length; i++) {               //清除重复号码
+  for (var i = 0; i < lists.length; i++) {               //clear duplicate number
         for (p = i + 1; p < lists.length; p++) {
             if (lists[i] === lists[p]) {
                 lists.splice(p, 1);
@@ -55,7 +55,7 @@ add(e){                                                                         
         }
   }                                        
   this.setState({lists:lists})
-  var arr1=this.state.lists;                //二星组
+  var arr1=this.state.lists;                //twostar combination
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -63,7 +63,7 @@ add(e){                                                                         
       x++;
    }
   }                         
-  var arr2=this.state.lists;                //三星组
+  var arr2=this.state.lists;                //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -74,7 +74,7 @@ add(e){                                                                         
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                //四星组
+  var arr3=this.state.lists;                //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -89,14 +89,14 @@ add(e){                                                                         
   var dd='二星赔率:75.6         三星赔率:890                       四星赔率:13500';            
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length,paytimes:dd,info:info})
 }
-add0(e){                                                                                           //单号码添加
+add0(e){                                                                     //number 46 added
   const lists=this.state.lists;
   var i;
   var p;
   var x=0;
   const info=e.target.getAttribute("value");
   lists.push(info);
-  for (var i = 0; i < lists.length; i++) {               //清除重复号码
+  for (var i = 0; i < lists.length; i++) {               //clear duplicate numbers
         for (p = i + 1; p < lists.length; p++) {
             if (lists[i] === lists[p]) {
                 lists.splice(p, 1);
@@ -104,7 +104,7 @@ add0(e){                                                                        
         }
   }                                        
   this.setState({lists:lists})
-  var arr1=this.state.lists;                //二星组
+  var arr1=this.state.lists;                //twostar combiantion
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -112,7 +112,7 @@ add0(e){                                                                        
       x++;
    }
   }                         
-  var arr2=this.state.lists;                //三星组
+  var arr2=this.state.lists;                //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -123,7 +123,7 @@ add0(e){                                                                        
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                //四星组
+  var arr3=this.state.lists;                //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -142,12 +142,12 @@ componentWillMount(){
 this.getData();
 this.users();
 }
-delete(){                                                                                        //清除所选数组
+delete(){                                                            //clear all numbers
    const lists=this.state.lists;
    const sss=this.state.sss;
    this.setState({lists:[],sss1:[],sss2:[],sss3:[]})
 }
-inputvalue(e){                                                                                    //输入框值提取
+inputvalue(e){                                                               //get inputvalue
   this.setState({
      inp:e.target.value
 })
@@ -162,7 +162,7 @@ inputvalue2(e){
      inp2:e.target.value
 })
 }
-money()                                                                                        //balance
+money()                                                                    //balance
   { var balance=this.state.value;
     var balancenew=balance-this.state.sss1*this.state.inp-this.state.sss2*this.state.inp1-this.state.sss3*this.state.inp2;
     if(balancenew>=0){
@@ -170,7 +170,7 @@ money()                                                                         
     if(balancenew<0){alert('超出余额:'+(0-balancenew));}    
 }
 
-    handleClick(){                                                                               //links
+    handleClick(){                                                                  //links
         window.location.href = "/#/select"
     }	
     lownum(){
@@ -195,7 +195,7 @@ valueChange(e){
   this.setState({valuetest:e.target.value});
 }
 
-add1(e){                                                                                     //头号号码添加
+add1(e){                                                       //first digits of number added
   const lists=this.state.lists;
   var i;
   var p;
@@ -251,7 +251,7 @@ if(e==0){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+       var arr1=this.state.lists;                //twostar combination
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -259,7 +259,7 @@ if(e==0){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+  var arr2=this.state.lists;                    //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -270,7 +270,7 @@ if(e==0){
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                   //四星组
+  var arr3=this.state.lists;                   //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -285,7 +285,7 @@ if(e==0){
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
      
 }
-add2(e){                                                                                     //尾号号码添加
+add2(e){                                                           //last of digits number added
   const lists=this.state.lists;
   var i;
   var p;
@@ -391,7 +391,7 @@ if(e==9){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+       var arr1=this.state.lists;                //twostar combination
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -399,7 +399,7 @@ if(e==9){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+  var arr2=this.state.lists;                    //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -410,7 +410,7 @@ if(e==9){
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                   //四星组
+  var arr3=this.state.lists;                   //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -425,7 +425,7 @@ if(e==9){
   this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
      
 }
-add3(e){                                                                                     //生肖号码添加
+add3(e){                                                              //Zodiac number added
   const lists=this.state.lists;
   var i;
   var p;
@@ -551,7 +551,7 @@ if(e==11){
   }                                        
 }
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+       var arr1=this.state.lists;                //twostar combination
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -559,7 +559,7 @@ if(e==11){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+  var arr2=this.state.lists;                    //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -570,7 +570,7 @@ if(e==11){
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                   //四星组
+  var arr3=this.state.lists;                   //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -586,7 +586,7 @@ if(e==11){
      
 }
 
-add4(e){                                                                                     //其他号码添加
+add4(e){                                                                   //other number added
   const lists=this.state.lists;
   var i;
   var p;
@@ -663,7 +663,7 @@ if(e==6){
 }
 
      this.setState({lists:lists})
-       var arr1=this.state.lists;                //二星组
+       var arr1=this.state.lists;                //twostar combination
   var all1=new Array()
   for (i=0; i<arr1.length; i++){
    for(p=i+1; p<arr1.length; p++){
@@ -671,7 +671,7 @@ if(e==6){
       x++;
    }
   }                         
-  var arr2=this.state.lists;                    //三星组
+  var arr2=this.state.lists;                    //threestar combination
   var q;
   var all2=new Array()
   var x=0;
@@ -682,7 +682,7 @@ if(e==6){
       x++;
    } }
 }                            
-  var arr3=this.state.lists;                   //四星组
+  var arr3=this.state.lists;                   //fourstar combination
   var r;
   var all3=new Array()
   var x=0;
@@ -699,7 +699,7 @@ if(e==6){
 }
 
 
-add5(e){                                                                                     //链接跳转
+add5(e){                                                                 //links
   if(e==0){
         window.location.href = "/#/taiwanlotto/"                                   
 }
@@ -734,6 +734,8 @@ starhid(e){
   this.setState({sss:b,aaa:2});}
   if(d=='四星'){
   this.setState({sss:c,aaa:3});}
+
+
 }
 resul(){
   if(this.state.aaa==1){
@@ -750,11 +752,11 @@ resul(){
 deletenum(){
   var arr=['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49'];
   var a=this.state.lists;
-  var arr2=[]
   var i;
   var j;
   var p;
   var q;
+  var x=0;
   for(i=0;i<a.length;i++){
     for(j=0;j<arr.length;j++){
       if(+a[i]==+arr[j]){
@@ -762,7 +764,7 @@ deletenum(){
       }
     }
    }
-   for (var i = 0; i < arr.length; i++) {               //清除重复号码
+   for (var i = 0; i < arr.length; i++) {               //clear duplicate number
         for (p = i + 1; p < arr.length; p++) {
             if (arr[i] === arr[p]) {
                 arr.splice(p, 1);
@@ -770,7 +772,38 @@ deletenum(){
         }
    }   
    this.setState({lists:arr});
-
+  var arr1=arr;                //twostar combination
+  var all1=new Array()
+  for (i=0; i<arr1.length; i++){
+   for(p=i+1; p<arr1.length; p++){
+      all1[x]=[arr1[i],arr1[p]];
+      x++;
+   }
+  }                         
+  var arr2=arr;                    //threestar combination
+  var q;
+  var all2=new Array()
+  var x=0;
+  for (i=0; i<arr2.length; i++){
+   for(p=i+1; p<arr2.length; p++){
+    for(q=p+1; q<arr2.length;q++){
+      all2[x]=[arr2[i],arr2[p],arr2[q]];
+      x++;
+   } }
+}                            
+  var arr3=arr;                   //fourstar combination
+  var r;
+  var all3=new Array()
+  var x=0;
+  for (i=0; i<arr3.length; i++){
+   for(p=i+1; p<arr3.length; p++){
+    for(q=p+1; q<arr3.length;q++){
+     for(r=q+1;r<arr3.length;r++){
+      all3[x]=[arr3[i],arr3[p],arr3[q],arr3[r]];
+      x++;
+   } }}
+}                             
+  this.setState({sss1:all1.length,sss2:all2.length,sss3:all3.length})
 
 
 }
@@ -930,7 +963,7 @@ deletenum(){
             <input type='text' name='twostarmoney' onChange={this.inputvalue.bind(this)} class='starnum' defaultValue='0'/>
           </div>
           <div class='flex'>
-            <input type='button'  name='2x' onClick={this.starhid.bind(this)} value='三星'/><input type='text' value={this.state.sss2} name='threestarnum' class='superstyle' />
+            <input type='button'  name='3x' onClick={this.starhid.bind(this)} value='三星'/><input type='text' value={this.state.sss2} name='threestarnum' class='superstyle' />
             <input type='text' name='threestarmoney' onChange={this.inputvalue1.bind(this)} class='starnum' defaultValue='0'/>
           </div>         
           <div class='flex'>

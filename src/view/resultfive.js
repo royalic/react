@@ -38,8 +38,8 @@ var results = () => new Promise(function(resolve,reject){
         }
     );
 });
-   results2().then(function(value2){                                       //arr下注历史数组
-       var o;                                                              //arr0当前中奖号数组
+   results2().then(function(value2){                     //arr is the array of user's numbers
+       var o;                                             //arr0 is the array of winning numbers
        for (o=0; o<value.length;o++){
        var i;
        var t=0;

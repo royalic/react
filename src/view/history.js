@@ -31,8 +31,9 @@ testtwo(){
     this.state.link.forEach((item)=>{
       elements.push(
         <div>
-          <a class='col hiso num'>类型： {item.type}</a>&nbsp;<a class='col hiso num'>期数： {item.time}</a>&nbsp;<a class='col hiso num'>二号组数： {item.twostarnum}</a>&nbsp;<a class='col hiso num'>三号组数：{item.threestarnum}</a>&nbsp;<a class='col hiso num'>四号组数：{item.fourstarnum}</a>&nbsp;
-          <a class='col hiso num'>二号每注金额：{item.twostarmoney}</a>&nbsp;<a class='col hiso num'>三号每注金额：{item.threestarmoney}</a>&nbsp;<a class='col hiso num'>四号每注金额：{item.fourstarmoney}</a>&nbsp;<a class='col game2 num'>所选号码：{item.allnum}</a>&nbsp;<a class='col hiso num'>中奖号数：{item.getcount}</a>&nbsp;<a class='col hiso num'>金额：{item.getmoney}</a>
+          <td class='col hiso num'>类型： {item.type}</td>&nbsp;<td class='col hiso num'>期数： {item.time}</td>&nbsp;<td class='col hiso num'>二号组数： {item.twostarnum}</td>&nbsp;<td class='col hiso num'>三号组数：{item.threestarnum}</td>&nbsp;<td class='col hiso num'>四号组数：{item.fourstarnum}</td>&nbsp;
+          <td class='col hiso num'>二号每注金额： {item.twostarmoney}</td>&nbsp;<td class='col hiso num'>三号每注金额：{item.threestarmoney}</td>&nbsp;<td class='col hiso num'>四号每注金额：{item.fourstarmoney}</td>&nbsp;<td class='col game2 num'>所选号码：{item.allnum}</td>&nbsp;<td class='col hiso num'>中奖号数：{item.getcount}</td>&nbsp;<td class='col hiso num'>金额：{item.getmoney}</td><br/>
+          
           <div class='col center'></div>
 
         </div>
