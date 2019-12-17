@@ -1,5 +1,5 @@
+function addmoney(){
 var mysql = require('mysql');
-var schedule=require('node-schedule');
 var connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -70,7 +70,6 @@ var results = () => new Promise(function(resolve,reject){
 
    var o;
    var i;
-   console.log(value[0].id);
     for(o=0;o<value2.length;o++){
        for(i=0;i<value.length;i++){
           if(value2[o].name==value[i].name){
@@ -78,6 +77,7 @@ var results = () => new Promise(function(resolve,reject){
               if(value[i].getmoney==='not time'){console.log('it is not time');}
               else{
               value2[o].balance=(parseFloat(value2[o].balance)+parseFloat(value[i].getmoney)).toFixed(2);
+              console.log(value2[o].name,value[i].getmoney);
               console.log(value2[o].balance);
               connection.query(
                      "update user set balance=? where name=?",[value2[o].balance,value2[o].name],
@@ -119,4 +119,6 @@ var results = () => new Promise(function(resolve,reject){
 
 })
 })
+}
+exports.addmoney=addmoney;
 
